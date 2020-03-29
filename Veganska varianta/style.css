@@ -2,8 +2,113 @@
 html { box-sizing: border-box; }
 *, :after, :before { box-sizing: inherit; }
 
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    max-width: 479px;
+    min-width: 350px;
+    margin: 0;
+}
 
-/* -------------------------------------------------- */
+.doporucueme {
+   display:  flex;
+   max-width: 479px;
+}
+
+.recept-kategorie {
+   display: inline-block;
+   text-align: left;
+   width: 49%;
+   font-size: 14px;
+   font-weight: 400;
+   padding-left: 10px;
+}
+
+.recept-komentare {
+   display: inline-block;
+   text-align: right;
+   width: 49%;
+   font-size: 14px;
+   font-weight: 400;
+   padding-right: 10px;
+}
+
+.recept-nazev {
+   padding-top: 10px;  
+   font-size: 28px;
+   font-weight: 800;
+   margin-bottom: 0em;
+   padding-left: 10px;
+}
+
+.recept-kategorie-hl {
+   display: inline-block;
+   text-align: left;
+   width: 49%;
+   font-size: 14px;
+   font-weight: 400;
+   padding-left: 10px;
+}
+
+.recept-komentare-hl {
+   display: inline-block;
+   text-align: right;
+   width: 49%;
+   font-size: 14px;
+   font-weight: 400;
+   padding-right: 10px;
+}
+
+.recept-nazev-hl {  
+   font-size: 28px;
+   font-weight: 800;
+   padding-left: 10px;
+   margin-bottom: 0em;
+   padding-top: 120px;
+}
+
+.recept2,
+.recept3,
+.recept4,
+.recept5 {
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover; 
+   height: 90px;
+}
+
+.hlavni-recept{
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover; 
+   height: 200px;
+}
+
+.hlavni-recept {
+    background-image: url("images/salat.jpg");
+}
+ .recept2 {
+    background-image: url("images/chlebicek.jpg");
+ }
+ .recept3 {
+    background-image: url("images/tacos.jpg");
+ }
+ .recept4 {
+    background-image: url("images/cizrna.jpg");
+ }
+ .recept5 {
+    background-image: url("images/burger.jpg");
+ }
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
 
 /*
 pouzivame mobile first pristup
@@ -17,23 +122,151 @@ notebook/pc:
 }
 */
 
+@media (min-width: 480px) {
+body {
+   font-family: 'Source Sans Pro', sans-serif;
+   color: white;
+   min-width: 480px;
+   max-width: 859px;
+}
+
+.hlavni-recept {
+   display: block;
+   margin-right: 15px;
+   padding: 0;
+}
+
+.recept2,
+.recept3 {
+   display: inline-block;
+   width: 49%;
+   min-height: 150px;
+   margin-right: -5px;
+}
+
+.recept4,
+.recept5 {
+   display: inline-block;
+   width: 49%;
+   min-height: 150px;
+   margin: 0;
+   margin-right: -5px;
+}
+
+
+.recept-kategorie {
+   display: inline-block;
+   text-align: left;
+   width: 49%;
+}
+   
+.recept-komentare {
+   display: inline-block;
+   text-align: right;
+   width: 49%;
+}
+   
+.recept-nazev { 
+   font-size: 22px;
+   padding-top: 80px;  
+}
+   
+.recept-kategorie-hl {
+   display: inline-block;
+   text-align: left;
+   width: 49%;
+}
+   
+.recept-komentare-hl {
+   display: inline-block;
+   text-align: right;
+   width: 49%;
+}
+   
+.recept-nazev-hl {  
+   font-size: 28px;
+   padding-top: 160px; 
+ }
+   
+ .recept2,
+ .recept3,
+ .recept4,
+ .recept5 { 
+    height: 150px;
+ }
+
+ .hlavni-recept {
+    height: 250px;
+ }
+}
+
+@media (min-width: 860px) {
 
 body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+   font-family: 'Source Sans Pro', sans-serif;
+   color: white;
+   margin: 0;
+   min-width: 860px;
+}
+
+.doporucujeme {
+   display: flex;
+}
+
+.hlavni-recept {
+   min-height: 400px;
+   margin: 0;
+}
+
+.recept2,
+.recept3,
+.recept4,
+.recept5 { 
+   min-height: 200px;
+}
+
+.recept-nazev-hl {  
+   font-size: 48px; 
+}
+
+.recept-komentare-hl {
+   display: inline-block;
+   text-align: right;
+   width: 49%;
+}
+
+.recept-nazev { 
+   font-size: 28px;
+}
+   
+.recept-kategorie-hl {
+   display: inline-block;
+   text-align: left;
+   width: 49%;
+}
+
+.recept2,
+.recept3 {
+   display: inline-flex;
+   flex-direction: column;
+   width: 49%;
+   height: 50%;
+}
+
+.recept4,
+.recept5 {
+   display: inline-flex;
+   flex-direction: column;
+   height: 50%;
 }
 
 .paticka {
-    text-align: center;
-    font-size: 14px;
-    color: silver;
+   text-align: center;
+   font-size: 14px;
+   color: silver;
 }
 
 .paticka a {
-    color: silver;
+   color: silver;
+  }
 }
-
-
-/* ------------------------------- */
-/* ----- DOLE BUDE TVOJE CSS ----- */
-/* ------------------------------- */
