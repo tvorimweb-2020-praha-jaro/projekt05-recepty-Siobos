@@ -1,0 +1,163 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+ /*Koment lektora: Barvy na body, nastavení fontů pro celou stránku atd. je ok, ale šířky MAX/MIN WIDTH přesunoout až na samotný div .doporucujeme, ale nejsou tu vůbec potřeba, takže můžeš smazat ... představ si to tak, že body reprezentuje celou stránku (spíš obrazovku) a dovnitř umisťuješ svůj projekt - celý ten .doporucujeme, jestli ti to dává smysl  ... vždycky máš projekt obalený nějakým kontejnerem (tady .doporucujeme) a s tím se pracuje. - Já: SMAZALA JSEM PROTO PUV. NAVHR: MAX a MIN WIDTH*/
+
+/*KOMET LEKTORA: Text přes recepty není úplně čitelný - dá se tvyřešit třeba vložením na obrázek poloprůhledného pozadí, k tomu využijeme vlastnost background (místo "background-image"), do které můžeme dát i víc obrázků a načtou se všechny "přes sebe" ... toho využijeme a dáme tam poloprůhledný linearní gradient, který má stejné hodnoty (nechceme vytvářet více barevný přechod, nám stačí stejná barva přes celý obrázek) a pod to dáme náš obrázek ... asi nějak takhle: background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(images/salat.jpg)*/
+.hlavni-recept {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/salat.jpg);
+    min-height: 200px;  /*dáno v zadání, první obrázek větší, ostatní 90px*/
+}
+
+.recept2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/chlebicek.jpg);
+}
+
+.recept3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/tacos.jpg);
+}
+
+.recept4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/cizrna.jpg);
+}
+
+.recept5 {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/burger.jpg);
+}
+
+.recept {
+    min-height: 90px; /*dáno v zadání*/
+}
+
+.hlavni-recept, .recept {   /*toto celé chci dt do jednoho kontejneru, pozor, ne receptY*, to by byly všechny 4 nehlavní recepty v jednom konejneru to nechci*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   /*dělá mezery /prostor mezi texty/názvy* - název receptu*/
+    padding: 10px; /*dáno v zadání*, dělá odsazení všech textů od kraje*/
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid white;
+}
+
+.recept-nazev {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+
+.doporucujeme h2 {
+    font-size: 28px;
+}
+
+.recepty h2 {
+    font-size: 18px;
+}
+
+.recept-meta {
+    display: flex;
+    justify-content: space-between;   /*Já: jednoduše zajistí mezery mezi flexy - kategorie a komentáře)*/
+}
+
+.recept-kategorie, .recept-komentare {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.paticka {
+    text-align: center;
+    font-size: 14px;
+    color: silver;
+}
+
+.paticka a {
+    color: silver;
+}
+
+@media (min-width: 480px) {
+    .hlavni-recept, .recept {
+        padding: 20px; /*dáno v zadání*, dělá odsazení všech textů od kraje*/
+    }
+
+    .hlavni-recept {
+        min-height: 250px; /*dáno v zadání*/
+    }
+    
+    .recepty {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .recept {
+        min-height: 150px;  /*dáno v zadání*/             /*nemusím psát recept2, .recept3, .recept4, .recept5*/ 
+        flex: 1 1 50%;         /*rovnoměrné rozdělení flex:  <flex-grow> <flex-shrink> <flex-basis> */
+        /*Výchozí hodnota je:
+
+flex: 0 1 auto
+flex-grow: 0 – nebude se nijak roztahovat do volného místa.
+flex-shrink: 1 – smršťovat se bude stejně jako ostatní položky.
+flex-basis: auto – zabere prostor, který jí určí vlastní obsah.*/
+/*Musí být ale umožněno  flex-wrap: wrap;*/
+    }
+    
+    .recept:nth-child(2n+1) {
+        border-right: 1px solid white;   /*dělící čára uprostřed*/
+    }
+
+    .doporucujeme h2 {
+        font-size: 36px;
+    }
+
+    .recepty h2 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: 860px) { 
+    .doporucujeme {
+        display: flex;
+    }
+    
+    .hlavni-recept {
+        min-height: 400px;
+        border-right: 1px solid white;
+    }
+
+    .recept {
+        min-height: 200px;
+    }
+    
+    .recept-nazev {
+        font-size: 48px;
+    }
+
+    .doporucujeme h2 {
+        font-size: 48px;
+    }
+
+    .recepty h2 {
+        font-size: 28px;
+    }
+}
